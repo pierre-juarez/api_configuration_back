@@ -1,2 +1,28 @@
+## API CLIENTE
 ### GET 
 GET http://localhost:3000
+
+### GET - All clients
+GET http://localhost:3000/api-client
+
+### GET - Client by ID
+GET http://localhost:3000/api-client/2
+
+### POST - Create cliente
+POST http://localhost:3000/api-client
+Content-Type: application/json
+
+{
+  "cliente": "Footloose Venezuela"
+}
+
+### PUT - Update client
+PUT http://localhost:3000/api-client/1002
+Content-Type: application/json
+
+{
+  "cliente": "Footloose Columbdia"
+}
+
+### DELETE - Delete client
+DELETE  http://localhost:3000/api-client/1024

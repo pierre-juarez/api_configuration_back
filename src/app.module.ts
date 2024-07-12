@@ -1,12 +1,13 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ClientModule } from './modules/client/client-module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: ".env.dev",
-      isGlobal: true
+      envFilePath: '.env.dev',
+      isGlobal: true,
     }),
     TypeOrmModule.forRoot({
       type: 'mssql',
@@ -18,9 +19,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: false,
       options: {
-        encrypt: false
-      }
+        encrypt: false,
+      },
     }),
+    ClientModule,
   ],
   controllers: [],
   providers: [],
