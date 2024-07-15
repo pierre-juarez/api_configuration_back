@@ -26,3 +26,46 @@ Content-Type: application/json
 
 ### DELETE - Delete client
 DELETE  http://localhost:3000/api-client/1024
+
+###############################################################
+
+## API CONFIGURATION
+
+### GET - All configurations
+GET http://localhost:3000/api-configuration
+
+### GET - Configurations by IdCliente y Ambiente
+GET http://localhost:3000/api-configuration/1
+Content-Type: application/json
+
+{
+    "ambiente": "DEV"
+}
+
+
+### POST - Create configuration
+POST http://localhost:3000/api-configuration
+Content-Type: application/json
+
+{
+    "clave": "URL API LOGIN",
+    "valor": "https://apicomercialdev.sisconti.com/api/v1/producto/obtener",
+    "ambiente": "DEV",
+    "type_request": "GET",
+    "idCliente": 1
+}
+
+### PUT - Update configuration
+PUT http://localhost:3000/api-configuration/11
+Content-Type: application/json
+
+{
+  "clave": "URL API LOGINxx",
+  "valor": "https://apicomercialdev.sisconti.com/api/v1/producto/obtener",
+  "ambiente": "PROD",
+  "type_request": "GET",
+  "idCliente": 1
+}
+
+### DELETE - Delete configuration
+DELETE  http://localhost:3000/api-configuration/11
