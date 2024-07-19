@@ -12,8 +12,7 @@ async function bootstrap() {
   const configSwagger = new DocumentBuilder()
     .setTitle('API SmartFooloose')
     .setDescription('API for the SmartFootloose backend')
-    .setVersion('1.0')
-    .addTag('API')
+    .setVersion('1.0.0')
     .build();
 
   const document = SwaggerModule.createDocument(app, configSwagger);

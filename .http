@@ -6,7 +6,7 @@ GET http://localhost:3000
 GET http://localhost:3000/api-client
 
 ### GET - Client by ID
-GET http://localhost:3000/api-client/2
+GET http://localhost:3000/api-client/499
 
 ### POST - Create cliente
 POST http://localhost:3000/api-client
@@ -35,7 +35,7 @@ DELETE  http://localhost:3000/api-client/1024
 GET http://localhost:3000/api-configuration
 
 ### GET - Configurations by IdCliente y Ambiente
-GET http://localhost:3000/api-configuration/1
+POST http://localhost:3000/api-configuration/2/get-config
 Content-Type: application/json
 
 {
@@ -48,24 +48,26 @@ POST http://localhost:3000/api-configuration
 Content-Type: application/json
 
 {
-    "clave": "URL API LOGIN",
+    "clave": "URL API PRODUCTO",
     "valor": "https://apicomercialdev.sisconti.com/api/v1/producto/obtener",
     "ambiente": "DEV",
-    "type_request": "GET",
-    "idCliente": 1
+    "type_request": "POST",
+    "idCliente": 2
 }
 
 ### PUT - Update configuration
-PUT http://localhost:3000/api-configuration/11
+PUT http://localhost:3000/api-configuration/25
 Content-Type: application/json
 
 {
-  "clave": "URL API LOGINxx",
-  "valor": "https://apicomercialdev.sisconti.com/api/v1/producto/obtener",
-  "ambiente": "PROD",
-  "type_request": "GET",
-  "idCliente": 1
+
+    "clave": "URL API LOGIN",
+    "valor": "https://apis.footloose.pe/pdv/api/auth/login",
+    "ambiente": "DEV",
+    "type_request": "POST",
+    "idCliente": 2
+  
 }
 
 ### DELETE - Delete configuration
-DELETE  http://localhost:3000/api-configuration/11
+DELETE  http://localhost:3000/api-configuration/15
