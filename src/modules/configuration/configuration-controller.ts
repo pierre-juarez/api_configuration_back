@@ -6,6 +6,7 @@ import {
   Param,
   Post,
   Put,
+  UseGuards,
 } from '@nestjs/common';
 import { ConfigurationService } from './configuration-service';
 import { ConfigurationDto } from './dto/configuration.dto';
@@ -16,10 +17,14 @@ import {
   ApiTags,
   ApiParam,
   ApiBody,
+  ApiSecurity,
 } from '@nestjs/swagger';
+import { AuthGuard } from '@nestjs/passport';
 
 @ApiTags('API Configuración')
 @Controller('api-configuration')
+@UseGuards(AuthGuard('basic'))
+@ApiSecurity('basic-auth')
 export class ConfigurationController {
   constructor(private readonly clientService: ConfigurationService) {}
 

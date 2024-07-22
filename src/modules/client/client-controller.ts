@@ -6,6 +6,7 @@ import {
   Param,
   Post,
   Put,
+  UseGuards,
 } from '@nestjs/common';
 import { ClientService } from './client-service';
 import { CabClientDto } from './dto/cab-client.dto';
@@ -15,10 +16,14 @@ import {
   ApiTags,
   ApiParam,
   ApiBody,
+  ApiSecurity,
 } from '@nestjs/swagger';
+import { AuthGuard } from '@nestjs/passport';
 
 @ApiTags('API Cliente')
 @Controller('api-client')
+@UseGuards(AuthGuard('basic'))
+@ApiSecurity('basic-auth')
 export class ClientController {
   constructor(private readonly clientService: ClientService) {}
 

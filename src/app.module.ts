@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ClientModule } from './modules/client/client-module';
 import { ConfigurationModule } from './modules/configuration/configuration-module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { ConfigurationModule } from './modules/configuration/configuration-modul
         encrypt: false,
       },
     }),
+    AuthModule,
     ClientModule,
     ConfigurationModule,
   ],
