@@ -11,7 +11,7 @@ import { Configuration } from './entities/configuration.entity';
 @Injectable()
 export class ConfigurationService {
   constructor(
-    @InjectRepository(Configuration)
+    @InjectRepository(Configuration, 'fs_smart')
     private repoConfiguration: Repository<Configuration>,
   ) {}
 

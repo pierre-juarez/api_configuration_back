@@ -11,7 +11,7 @@ import { CabClientDto } from './dto/cab-client.dto';
 @Injectable()
 export class ClientService {
   constructor(
-    @InjectRepository(CabClient)
+    @InjectRepository(CabClient, 'fs_smart')
     private cabClient: Repository<CabClient>,
   ) {}
 

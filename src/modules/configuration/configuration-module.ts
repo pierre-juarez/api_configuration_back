@@ -5,7 +5,7 @@ import { ConfigurationController } from './configuration-controller';
 import { ConfigurationService } from './configuration-service';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Configuration])],
+  imports: [TypeOrmModule.forFeature([Configuration], 'fs_smart')],
   controllers: [ConfigurationController],
   providers: [ConfigurationService],
 })

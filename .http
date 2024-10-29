@@ -4,9 +4,11 @@ GET http://localhost:3000
 
 ### GET - All clients
 GET http://localhost:3000/api-client
+Authorization: Basic YmFja19zbWFydGZvb3Rsb29zZTpvQiNaMEBjMTk3KEs1cnswRF5bQQ==
 
 ### GET - Client by ID
-GET http://localhost:3000/api-client/499
+GET http://localhost:3000/api-client/1
+Authorization: Basic YmFja19zbWFydGZvb3Rsb29zZTpvQiNaMEBjMTk3KEs1cnswRF5bQQ==
 
 ### POST - Create cliente
 POST http://localhost:3000/api-client
@@ -71,3 +73,7 @@ Content-Type: application/json
 
 ### DELETE - Delete configuration
 DELETE  http://localhost:3000/api-configuration/15
+
+### GET - Get product by SKU
+GET http://localhost:3000/product/18805057204
+Authorization: Basic YmFja19zbWFydGZvb3Rsb29zZTpvQiNaMEBjMTk3KEs1cnswRF5bQQ==

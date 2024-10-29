@@ -5,7 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { CabClient } from './entities/cab-client.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([CabClient])],
+  imports: [TypeOrmModule.forFeature([CabClient], 'fs_smart')],
   controllers: [ClientController],
   providers: [ClientService],
 })
