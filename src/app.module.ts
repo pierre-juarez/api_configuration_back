@@ -5,6 +5,7 @@ import { ClientModule } from './modules/client/client-module';
 import { ConfigurationModule } from './modules/configuration/configuration-module';
 import { AuthModule } from './auth/auth.module';
 import { ProductModule } from './modules/product/product-module';
+import { LogModule } from './modules/log/log.module';
 
 @Module({
   imports: [
@@ -42,11 +43,27 @@ import { ProductModule } from './modules/product/product-module';
       },
       logging: true,
     }),
+    TypeOrmModule.forRoot({
+      name: 'db_log',
+      type: 'mssql',
+      host: process.env.SERVER,
+      port: Number(process.env.PORT),
+      username: process.env.USERNAME_DB,
+      password: process.env.PASSWORD,
+      database: process.env.DATABASE_LOG,
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      synchronize: false,
+      options: {
+        encrypt: false,
+      },
+      logging: true,
+    }),
 
     AuthModule,
     ClientModule,
     ConfigurationModule,
     ProductModule,
+    LogModule,
   ],
   controllers: [],
   providers: [],

@@ -15,9 +15,9 @@ export class ConfigurationService {
     private repoConfiguration: Repository<Configuration>,
   ) {}
 
-  async getAllConfigs() {
+  async getAllConfigs(ambiente: String) {
     try {
-      return await this.repoConfiguration.find();
+      return await this.repoConfiguration.find({ where: { ambiente} });
     } catch (error) {
       throw new BadRequestException(error.message);
     }

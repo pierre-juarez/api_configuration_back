@@ -12,6 +12,7 @@ Authorization: Basic YmFja19zbWFydGZvb3Rsb29zZTpvQiNaMEBjMTk3KEs1cnswRF5bQQ==
 
 ### POST - Create cliente
 POST http://localhost:3000/api-client
+Authorization: Basic YmFja19zbWFydGZvb3Rsb29zZTpvQiNaMEBjMTk3KEs1cnswRF5bQQ==
 Content-Type: application/json
 
 {
@@ -27,17 +28,25 @@ Content-Type: application/json
 }
 
 ### DELETE - Delete client
-DELETE  http://localhost:3000/api-client/1024
+DELETE  http://localhost:3000/api-client/4
+Authorization: Basic YmFja19zbWFydGZvb3Rsb29zZTpvQiNaMEBjMTk3KEs1cnswRF5bQQ==
 
 ###############################################################
 
 ## API CONFIGURATION
 
 ### GET - All configurations
-GET http://localhost:3000/api-configuration
+POST http://localhost:3000/api-configuration
+Authorization: Basic YmFja19zbWFydGZvb3Rsb29zZTpvQiNaMEBjMTk3KEs1cnswRF5bQQ==
+Content-Type: application/json
+
+{
+    "ambiente": "DEV"
+}
 
 ### GET - Configurations by IdCliente y Ambiente
 POST http://localhost:3000/api-configuration/2/get-config
+Authorization: Basic YmFja19zbWFydGZvb3Rsb29zZTpvQiNaMEBjMTk3KEs1cnswRF5bQQ==
 Content-Type: application/json
 
 {
@@ -47,6 +56,7 @@ Content-Type: application/json
 
 ### POST - Create configuration
 POST http://localhost:3000/api-configuration
+
 Content-Type: application/json
 
 {
@@ -76,4 +86,25 @@ DELETE  http://localhost:3000/api-configuration/15
 
 ### GET - Get product by SKU
 GET http://localhost:3000/product/18805057204
+Authorization: Basic YmFja19zbWFydGZvb3Rsb29zZTpvQiNaMEBjMTk3KEs1cnswRF5bQQ==
+
+### GET - Get all logs
+GET http://localhost:3000/log-error/
+Authorization: Basic YmFja19zbWFydGZvb3Rsb29zZTpvQiNaMEBjMTk3KEs1cnswRF5bQQ==
+
+### POST - Create a new log error
+POST http://localhost:3000/log-error/
+Authorization: Basic YmFja19zbWFydGZvb3Rsb29zZTpvQiNaMEBjMTk3KEs1cnswRF5bQQ==
+Content-Type: application/json
+
+{
+  "tag": "DATABASE_ERROR",
+  "message": "An error occurred while connecting to the database.",
+  "stackTrace": "Error: Connection failed at [stack trace here]"
+}
+
+
+
+### GET - Get log by ID
+GET http://localhost:3000/log-error/1
 Authorization: Basic YmFja19zbWFydGZvb3Rsb29zZTpvQiNaMEBjMTk3KEs1cnswRF5bQQ==

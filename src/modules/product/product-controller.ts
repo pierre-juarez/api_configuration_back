@@ -20,7 +20,7 @@ import {
 } from '@nestjs/swagger';
 import { AuthGuard } from '@nestjs/passport';
 
-@ApiTags('API Cliente')
+@ApiTags('API Producto')
 @Controller('product')
 @UseGuards(AuthGuard('basic'))
 @ApiSecurity('basic-auth')

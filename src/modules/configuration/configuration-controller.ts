@@ -3,6 +3,7 @@ import {
   Controller,
   Delete,
   Get,
+  HttpCode,
   Param,
   Post,
   Put,
@@ -28,18 +29,26 @@ import { AuthGuard } from '@nestjs/passport';
 export class ConfigurationController {
   constructor(private readonly clientService: ConfigurationService) {}
 
-  @Get()
+  @Post()
+  @HttpCode(200)
   @ApiOperation({
-    summary: 'Get all configurations',
+    summary: 'Get all configurations by ENV',
     description: 'Retrieve a list of all configurations from the database.',
+  })
+  @ApiBody({
+    description:
+      'The environment object containing the environment information',
+    type: AmbienteDto,
   })
   @ApiResponse({ status: 200, description: 'Return all configurations' })
   @ApiResponse({ status: 500, description: 'Internal server error' })
-  getAllConfigs() {
-    return this.clientService.getAllConfigs();
+  getAllConfigs(@Body() ambienteObj: AmbienteDto) {
+    const { ambiente } = ambienteObj;
+    return this.clientService.getAllConfigs(ambiente);
   }
 
   @Post(':id/get-config')
+  @HttpCode(200)
   @ApiOperation({
     summary: 'Get a configuration by ID and environment',
     description: 'Retrieve a specific configuration by its ID and environment.',
@@ -51,7 +60,7 @@ export class ConfigurationController {
     type: AmbienteDto,
   })
   @ApiResponse({
-    status: 201,
+    status: 200,
     description: 'Return the configuration with the given ID and environment',
   })
   @ApiResponse({ status: 404, description: 'Configuration not found' })
