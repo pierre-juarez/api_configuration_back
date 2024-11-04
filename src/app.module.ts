@@ -31,10 +31,10 @@ import { LogModule } from './modules/log/log.module';
     TypeOrmModule.forRoot({
       name: 'dwh_ecuador',
       type: 'mssql',
-      host: process.env.SERVER,
+      host: process.env.SERVER_DWH,
       port: Number(process.env.PORT),
-      username: process.env.USERNAME_DB,
-      password: process.env.PASSWORD,
+      username: process.env.USERNAME_DB_DWH,
+      password: process.env.PASSWORD_DWH,
       database: process.env.DATABASE_DWH,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: false,

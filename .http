@@ -27,7 +27,6 @@ Content-Type: application/json
   "cliente": "Footloose Columbdia"
 }
 
-### DELETE - Delete client
 DELETE  http://localhost:3000/api-client/4
 Authorization: Basic YmFja19zbWFydGZvb3Rsb29zZTpvQiNaMEBjMTk3KEs1cnswRF5bQQ==
 
@@ -85,7 +84,7 @@ Content-Type: application/json
 DELETE  http://localhost:3000/api-configuration/15
 
 ### GET - Get product by SKU
-GET http://localhost:3000/product/18805057204
+GET http://localhost:3000/product/18805050078
 Authorization: Basic YmFja19zbWFydGZvb3Rsb29zZTpvQiNaMEBjMTk3KEs1cnswRF5bQQ==
 
 ### GET - Get all logs
