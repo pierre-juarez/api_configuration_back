@@ -107,3 +107,14 @@ Content-Type: application/json
 ### GET - Get log by ID
 GET http://localhost:3000/log-error/1
 Authorization: Basic YmFja19zbWFydGZvb3Rsb29zZTpvQiNaMEBjMTk3KEs1cnswRF5bQQ==
+
+
+### GET - Last updated
+GET http://localhost:3000/api-inventario/last-updated
+
+### GET - Updated products
+GET http://localhost:3000/api-inventario/updated?date=2024-11-1&page=1&limit=1000
+Authorization: Basic YmFja19zbWFydGZvb3Rsb29zZTpvQiNaMEBjMTk3KEs1cnswRF5bQQ==
+
+### GET - Error data
+GET http://localhost:3000/api-inventario/updated?date=2022-01-01&page=52&limit=1000

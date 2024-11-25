@@ -1,11 +1,14 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ClientModule } from './modules/client/client-module';
-import { ConfigurationModule } from './modules/configuration/configuration-module';
-import { AuthModule } from './auth/auth.module';
-import { ProductModule } from './modules/product/product-module';
-import { LogModule } from './modules/log/log.module';
+import {
+  ClientModule,
+  ConfigurationModule,
+  AuthModule,
+  ProductModule,
+  LogModule,
+  InventarioModule,
+} from './modules/modules';
 
 @Module({
   imports: [
@@ -64,6 +67,7 @@ import { LogModule } from './modules/log/log.module';
     ConfigurationModule,
     ProductModule,
     LogModule,
+    InventarioModule,
   ],
   controllers: [],
   providers: [],
