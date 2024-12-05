@@ -10,10 +10,10 @@ export class InventarioService {
     private repoInventory: Repository<Inventario>,
   ) {}
 
-  async getLastUpdateInventory(): Promise<Date> {
+  async getFirstUpdateInventory(): Promise<Date> {
     const result = await this.repoInventory
       .createQueryBuilder('tb_products')
-      .select('MAX(tb_products.last_updated)', 'last_updated')
+      .select('MIN(tb_products.last_updated)', 'last_updated')
       .getRawOne();
     return result?.last_updated || null;
   }

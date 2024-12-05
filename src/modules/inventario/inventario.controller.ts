@@ -7,9 +7,9 @@ import { ApiTags } from '@nestjs/swagger';
 export class InventarioController {
   constructor(private readonly service: InventarioService) {}
 
-  @Get('last-updated')
-  async getLastUpdate() {
-    return this.service.getLastUpdateInventory();
+  @Get('first-updated')
+  async getFirstUpdate() {
+    return this.service.getFirstUpdateInventory();
   }
 
   @Get('updated')
