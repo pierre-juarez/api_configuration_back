@@ -26,4 +26,12 @@ export class LogDto {
   @IsOptional()
   @IsString()
   stackTrace?: string;
+
+  @ApiProperty({
+    description: 'Version of the application when the error occurred',
+    example: '1.0.0',
+  })
+  @IsNotEmpty()
+  @IsString()
+  version: string;
 }

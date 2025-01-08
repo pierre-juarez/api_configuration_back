@@ -21,4 +21,7 @@ export class Log {
 
   @CreateDateColumn({ type: 'datetime', default: () => 'CURRENT_TIMESTAMP' })
   created_at: Date; // Fecha de creación, se inicializa automáticamente
+
+  @Column({ nullable: true })
+  version: string;
 }

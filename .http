@@ -99,7 +99,8 @@ Content-Type: application/json
 {
   "tag": "DATABASE_ERROR",
   "message": "An error occurred while connecting to the database.",
-  "stackTrace": "Error: Connection failed at [stack trace here]"
+  "stackTrace": "Error: Connection failed at [stack trace here]",
+  "version": "1.130.10"
 }
 
 
