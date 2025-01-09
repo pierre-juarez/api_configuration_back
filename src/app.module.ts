@@ -65,7 +65,7 @@ import {
     AuthModule,
     ClientModule,
     ConfigurationModule,
-    // ProductModule,
+    ProductModule,
     LogModule,
     InventarioModule,
   ],
