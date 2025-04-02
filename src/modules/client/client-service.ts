@@ -7,11 +7,12 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { CabClientDto } from './dto/cab-client.dto';
+import { DATABASE_CNX } from 'src/constants/constant';
 
 @Injectable()
 export class ClientService {
   constructor(
-    @InjectRepository(CabClient, 'fs_smart')
+    @InjectRepository(CabClient, DATABASE_CNX.SMART)
     private cabClient: Repository<CabClient>,
   ) {}
 

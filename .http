@@ -84,7 +84,11 @@ Content-Type: application/json
 DELETE  http://localhost:3000/api-configuration/15
 
 ### GET - Get product by SKU
-GET http://localhost:3000/product/18805050078
+GET http://localhost:3000/product/18805050080?pais=ECU
+Authorization: Basic YmFja19zbWFydGZvb3Rsb29zZTpvQiNaMEBjMTk3KEs1cnswRF5bQQ==
+
+### GET - Get product by SKU
+GET http://localhost:3000/product/18804991794?pais=PER
 Authorization: Basic YmFja19zbWFydGZvb3Rsb29zZTpvQiNaMEBjMTk3KEs1cnswRF5bQQ==
 
 ### GET - Get all logs

@@ -2,11 +2,12 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Inventario } from './entities/inventario.entity';
 import { Repository } from 'typeorm';
+import { DATABASE_CNX } from 'src/constants/constant';
 
 @Injectable()
 export class InventarioService {
   constructor(
-    @InjectRepository(Inventario, 'db_log')
+    @InjectRepository(Inventario, DATABASE_CNX.LOG)
     private repoInventory: Repository<Inventario>,
   ) {}
 

@@ -9,6 +9,7 @@ import {
   LogModule,
   InventarioModule,
 } from './modules/modules';
+import { DATABASE_CNX } from './constants/constant';
 
 @Module({
   imports: [
@@ -17,13 +18,13 @@ import {
       isGlobal: true,
     }),
     TypeOrmModule.forRoot({
-      name: 'fs_smart',
+      name: DATABASE_CNX.SMART,
       type: 'mssql',
-      host: process.env.SERVER,
-      port: Number(process.env.PORT),
-      username: process.env.USERNAME_DB,
-      password: process.env.PASSWORD,
-      database: process.env.DATABASE,
+      host: process.env.SERVER_HOST,
+      port: Number(process.env.PORT_SQL),
+      username: process.env.USERNAME_HOST,
+      password: process.env.PASSWORD_HOST,
+      database: process.env.DATABASE_SMART,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: false,
       options: {
@@ -32,13 +33,13 @@ import {
       logging: true,
     }),
     TypeOrmModule.forRoot({
-      name: 'dwh_ecuador',
+      name: DATABASE_CNX.PASSARELADWH,
       type: 'mssql',
-      host: process.env.SERVER_DWH,
-      port: Number(process.env.PORT),
-      username: process.env.USERNAME_DB_DWH,
-      password: process.env.PASSWORD_DWH,
-      database: process.env.DATABASE_DWH,
+      host: process.env.SERVER_HOST,
+      port: Number(process.env.PORT_SQL),
+      username: process.env.USERNAME_HOST,
+      password: process.env.PASSWORD_HOST,
+      database: process.env.DATABASE_PE,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: false,
       options: {
@@ -47,12 +48,27 @@ import {
       logging: true,
     }),
     TypeOrmModule.forRoot({
-      name: 'db_log',
+      name: DATABASE_CNX.ECUADORDWH,
       type: 'mssql',
-      host: process.env.SERVER,
-      port: Number(process.env.PORT),
-      username: process.env.USERNAME_DB,
-      password: process.env.PASSWORD,
+      host: process.env.SERVER_HOST,
+      port: Number(process.env.PORT_SQL),
+      username: process.env.USERNAME_HOST,
+      password: process.env.PASSWORD_HOST,
+      database: process.env.DATABASE_EC,
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      synchronize: false,
+      options: {
+        encrypt: false,
+      },
+      logging: true,
+    }),
+    TypeOrmModule.forRoot({
+      name: DATABASE_CNX.LOG,
+      type: 'mssql',
+      host: process.env.SERVER_HOST,
+      port: Number(process.env.PORT_SQL),
+      username: process.env.USERNAME_HOST,
+      password: process.env.PASSWORD_HOST,
       database: process.env.DATABASE_LOG,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: false,

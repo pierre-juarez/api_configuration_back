@@ -7,11 +7,12 @@ import {
 } from '@nestjs/common';
 import { ConfigurationDto } from './dto/configuration.dto';
 import { Configuration } from './entities/configuration.entity';
+import { DATABASE_CNX } from 'src/constants/constant';
 
 @Injectable()
 export class ConfigurationService {
   constructor(
-    @InjectRepository(Configuration, 'fs_smart')
+    @InjectRepository(Configuration, DATABASE_CNX.SMART)
     private repoConfiguration: Repository<Configuration>,
   ) {}
 

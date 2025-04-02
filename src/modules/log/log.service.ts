@@ -7,11 +7,12 @@ import {
 } from '@nestjs/common';
 import { LogDto } from './dto/log.dto';
 import { Log } from './entities/log.entity';
+import { DATABASE_CNX } from 'src/constants/constant';
 
 @Injectable()
 export class LogService {
   constructor(
-    @InjectRepository(Log, 'db_log')
+    @InjectRepository(Log, DATABASE_CNX.LOG)
     private repoLogError: Repository<Log>,
   ) {}
 
